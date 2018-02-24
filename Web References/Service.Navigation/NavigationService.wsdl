@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://reddot.de/cms/webservices/navigation/1_1" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://reddot.de/cms/webservices/navigation/1_1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://reddot.de/cms/webservices/navigation/1_1">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="AddIndexToPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddIndexToPageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddIndexToPageRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pageIds" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGuid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="guid" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddIndexToPageRangeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveIndexFromPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveIndexFromPageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveIndexFromPageRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pageIds" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveIndexFromPageRangeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetIndexParent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="parentPageId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetIndexParentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetIndexPosition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="position" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetIndexPositionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIndexPosition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pageId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIndexPositionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetIndexPositionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearCache">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearCacheResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddIndexToPageSoapIn">
+    <wsdl:part name="parameters" element="tns:AddIndexToPage" />
+  </wsdl:message>
+  <wsdl:message name="AddIndexToPageSoapOut">
+    <wsdl:part name="parameters" element="tns:AddIndexToPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddIndexToPageRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddIndexToPageRange" />
+  </wsdl:message>
+  <wsdl:message name="AddIndexToPageRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddIndexToPageRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveIndexFromPageSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveIndexFromPage" />
+  </wsdl:message>
+  <wsdl:message name="RemoveIndexFromPageSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveIndexFromPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveIndexFromPageRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveIndexFromPageRange" />
+  </wsdl:message>
+  <wsdl:message name="RemoveIndexFromPageRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveIndexFromPageRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetIndexParentSoapIn">
+    <wsdl:part name="parameters" element="tns:SetIndexParent" />
+  </wsdl:message>
+  <wsdl:message name="SetIndexParentSoapOut">
+    <wsdl:part name="parameters" element="tns:SetIndexParentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetIndexPositionSoapIn">
+    <wsdl:part name="parameters" element="tns:SetIndexPosition" />
+  </wsdl:message>
+  <wsdl:message name="SetIndexPositionSoapOut">
+    <wsdl:part name="parameters" element="tns:SetIndexPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIndexPositionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIndexPosition" />
+  </wsdl:message>
+  <wsdl:message name="GetIndexPositionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIndexPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearCache" />
+  </wsdl:message>
+  <wsdl:message name="ClearCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearCacheResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NavigationServiceSoap">
+    <wsdl:operation name="AddIndexToPage">
+      <wsdl:input message="tns:AddIndexToPageSoapIn" />
+      <wsdl:output message="tns:AddIndexToPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddIndexToPageRange">
+      <wsdl:input message="tns:AddIndexToPageRangeSoapIn" />
+      <wsdl:output message="tns:AddIndexToPageRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveIndexFromPage">
+      <wsdl:input message="tns:RemoveIndexFromPageSoapIn" />
+      <wsdl:output message="tns:RemoveIndexFromPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveIndexFromPageRange">
+      <wsdl:input message="tns:RemoveIndexFromPageRangeSoapIn" />
+      <wsdl:output message="tns:RemoveIndexFromPageRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetIndexParent">
+      <wsdl:input message="tns:SetIndexParentSoapIn" />
+      <wsdl:output message="tns:SetIndexParentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetIndexPosition">
+      <wsdl:input message="tns:SetIndexPositionSoapIn" />
+      <wsdl:output message="tns:SetIndexPositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexPosition">
+      <wsdl:input message="tns:GetIndexPositionSoapIn" />
+      <wsdl:output message="tns:GetIndexPositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <wsdl:input message="tns:ClearCacheSoapIn" />
+      <wsdl:output message="tns:ClearCacheSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NavigationServiceSoap" type="tns:NavigationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddIndexToPage">
+      <soap:operation soapAction="http://reddot.de/cms/webservices/navigation/1_1/AddIndexToPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddIndexToPageRange">
+      <soap:operation soapAction="http://reddot.de/cms/webservices/navigation/1_1/AddIndexToPageRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveIndexFromPage">
+      <soap:operation soapAction="http://reddot.de/cms/webservices/navigation/1_1/RemoveIndexFromPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveIndexFromPageRange">
+      <soap:operation soapAction="http://reddot.de/cms/webservices/navigation/1_1/RemoveIndexFromPageRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIndexParent">
+      <soap:operation soapAction="http://reddot.de/cms/webservices/navigation/1_1/SetIndexParent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIndexPosition">
+      <soap:operation soapAction="http://reddot.de/cms/webservices/navigation/1_1/SetIndexPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexPosition">
+      <soap:operation soapAction="http://reddot.de/cms/webservices/navigation/1_1/GetIndexPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <soap:operation soapAction="http://reddot.de/cms/webservices/navigation/1_1/ClearCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NavigationService">
+    <wsdl:port name="NavigationServiceSoap" binding="tns:NavigationServiceSoap">
+      <soap:address location="http://rustylogiccms/CMS/Services/NavigationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

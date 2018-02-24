@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RustyLogic.RedDotNet.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RedDotNet_Service_Session_SessionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://rustylogiccms/CMS/Services/SessionService.asmx</Value>
+    </Setting>
+    <Setting Name="RedDotNet_Service_Rql_RqlService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://rustylogiccms/CMS/Services/RqlService.asmx</Value>
+    </Setting>
+    <Setting Name="RedDotNet_Service_Page_PageService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://rustylogiccms/CMS/Services/PageService.asmx</Value>
+    </Setting>
+    <Setting Name="RedDotNet_Service_Navigation_NavigationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://rustylogiccms/CMS/Services/NavigationService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
